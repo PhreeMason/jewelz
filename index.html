@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julie Bien-Aime - Personal Trainer Brooklyn NYC | Kilojewelz Fitness</title>
+    <meta name="description" content="NASM-certified personal trainer in Brooklyn, NYC. Online & in-person coaching, strength training, body transformation. Turn Kilos into Confidence!">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333333;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header - Black with pink accents */
+        header {
+            background: #000000;
+            color: #ffffff;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ff69b4;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a:hover {
+            color: #ff69b4;
+        }
+
+        /* Hero Section - Dramatic black background with pink highlights */
+        .hero {
+            background: linear-gradient(135deg, #000000 0%, #333333 50%, #000000 100%);
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+            text-align: center;
+            margin-top: 70px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.squarespace-cdn.com/content/v1/682b9a52a5acd10bce301bf9/d48b4cf5-3a86-4248-a43b-1300843fa80e/DSC05462.jpg?format=2500w') center/cover;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+            text-transform: uppercase;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero-content .tagline {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #ff69b4;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #cccccc;
+        }
+
+        .credentials {
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
+            color: #ffffff;
+            padding: 12px 25px;
+            border-radius: 25px;
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 18px 35px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
+            color: #ffffff;
+            box-shadow: 0 6px 20px rgba(255, 105, 180, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 105, 180, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #ffffff;
+            border: 2px solid #ff69b4;
+        }
+
+        .btn-secondary:hover {
+            background: #ff69b4;
+            color: #ffffff;
+            transform: translateY(-3px);
+        }
+
+        /* Services Section - Pink accents on gray */
+        .services {
+            padding: 5rem 0;
+            background: #f8f8f8;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 3rem;
+            color: #000000;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
+            margin: 1rem auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .service-card {
+            background: #ffffff;
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 2px solid #eeeeee;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(255, 105, 180, 0.2);
+            border-color: #ff69b4;
+        }
+
+        .service-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #000000;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .price {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ff69b4;
+            margin-bottom: 1rem;
+        }
+
+        .duration {
+            color: #666666;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+
+        .service-card ul {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .service-card li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #f0f0f0;
+            color: #555555;
+            font-size: 1rem;
+        }
+
+        .service-card li:before {
+            content: "✓";
+            color: #ff69b4;
+            font-weight: bold;
+            margin-right: 12px;
+            font-size: 1.2rem;
+        }
+
+        /* Testimonials Section - Black background with pink accents */
+        .testimonials {
+            padding: 5rem 0;
+            background: #000000;
+            color: #ffffff;
+        }
+
+        .testimonials .section-title {
+            color: #ffffff;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .testimonial {
+            background: #1a1a1a;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid #333333;
+            transition: all 0.3s;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-5px);
+            border-color: #ff69b4;
+            box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+        }
+
+        .testimonial-photo {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background: #333333;
+            margin: 0 auto 1.5rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888888;
+            font-size: 0.9rem;
+            border: 3px solid #ff69b4;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            color: #cccccc;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #ff69b4;
+            font-size: 1.1rem;
+        }
+
+        .stars {
+            color: #ff69b4;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* About Section - Gray background */
+        .about {
+            padding: 5rem 0;
+            background: #f0f0f0;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            color: #000000;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .about-text h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
+            margin-top: 1rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #555555;
+        }
+
+        .achievements {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .achievement {
+            text-align: center;
+            padding: 1.5rem;
+            background: #ffffff;
+            border-radius: 10px;
+            border: 2px solid #eeeeee;
+            transition: all 0.3s;
+        }
+
+        .achievement:hover {
+            border-color: #ff69b4;
+            transform: translateY(-3px);
+        }
+
+        .achievement-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #ff69b4;
+        }
+
+        .achievement-text {
+            color: #000000;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        .about-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .about-image {
+            background: #dddddd;
+            height: 220px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888888;
+            font-size: 0.9rem;
+            text-align: center;
+            border: 3px solid #cccccc;
+            transition: all 0.3s;
+        }
+
+        .about-image:hover {
+            border-color: #ff69b4;
+        }
+
+        .about-image.large {
+            grid-column: 1 / -1;
+            height: 280px;
+        }
+
+        /* FAQ Section - White background with pink accents */
+        .faq {
+            padding: 5rem 0;
+            background: #ffffff;
+        }
+
+        .faq-item {
+            background: #ffffff;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px solid #eeeeee;
+            transition: all 0.3s;
+        }
+
+        .faq-item:hover {
+            border-color: #ff69b4;
+        }
+
+        .faq-question {
+            padding: 1.8rem;
+            background: linear-gradient(45deg, #ff69b4, #ff1493);
+            color: #ffffff;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+
+        .faq-question:hover {
+            background: linear-gradient(45deg, #ff1493, #ff69b4);
+        }
+
+        .faq-answer {
+            padding: 1.8rem;
+            color: #555555;
+            display: none;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        /* Contact Section - Black background */
+        .contact {
+            padding: 5rem 0;
+            background: #000000;
+            color: #ffffff;
+        }
+
+        .contact .section-title {
+            color: #ffffff;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-form {
+            background: #1a1a1a;
+            padding: 2.5rem;
+            border-radius: 15px;
+            border: 2px solid #333333;
+        }
+
+        .contact-form h3 {
+            color: #ff69b4;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: #ffffff;
+            font-size: 1.1rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #333333;
+            border-radius: 8px;
+            font-size: 1rem;
+            background: #000000;
+            color: #ffffff;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #ff69b4;
+        }
+
+        .form-group textarea {
+            height: 130px;
+            resize: vertical;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 2rem;
+            color: #ff69b4;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+        }
+
+        .contact-item {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+            color: #cccccc;
+        }
+
+        .contact-item strong {
+            color: #ffffff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-content .tagline {
+                font-size: 1.6rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .achievements {
+                grid-template-columns: 1fr;
+            }
+
+            .about-images {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">KILOJEWELZ</div>
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#testimonials">Success Stories</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="credentials">NASM-Certified Personal Trainer & Competitive Bodybuilder</div>
+                <h1>KILOJEWELZ</h1>
+                <div class="tagline">Turn Kilos into Confidence!</div>
+                <p>Julie Bien-Aime offers personalized fitness coaching in Brooklyn, NYC and online. Specializing in strength training, muscle building, and complete body transformation for strong, confident women.</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">Book Free Consultation</a>
+                    <a href="#services" class="btn btn-secondary">View Training Plans</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Choose Your Transformation Journey</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>In-Person Training</h3>
+                    <div class="price">Starting at $150/session</div>
+                    <div class="duration">60-minute sessions • Brooklyn, NY</div>
+                    <ul>
+                        <li>Goal-focused fitness assessment</li>
+                        <li>Customized training plans</li>
+                        <li>Real-time coaching and form correction</li>
+                        <li>Motivation and accountability</li>
+                        <li>Regular program adjustments</li>
+                        <li>Flexible gym locations</li>
+                        <li>24/7 text support</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Book In-Person Session</a>
+                </div>
+
+                <div class="service-card">
+                    <h3>Online Coaching</h3>
+                    <div class="price">Starting at $300/month</div>
+                    <div class="duration">Weekly check-ins • Train anywhere</div>
+                    <ul>
+                        <li>Personalized training program</li>
+                        <li>Weekly workout plans with videos</li>
+                        <li>Progress tracking through app</li>
+                        <li>Form reviews and feedback</li>
+                        <li>Direct messaging support</li>
+                        <li>Bi-weekly check-ins</li>
+                        <li>Nutrition guidance included</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Start Online Coaching</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Success Stories</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="testimonial-photo">Client Photo</div>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-text">"Julie transformed not just my body but my entire mindset. Down 30 pounds and stronger than ever!"</div>
+                    <div class="testimonial-author">- Sarah M., Brooklyn</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-photo">Client Photo</div>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-text">"The online coaching program fit perfectly into my busy schedule. Amazing results in just 3 months!"</div>
+                    <div class="testimonial-author">- Marcus T., Manhattan</div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-photo">Client Photo</div>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-text">"Julie's expertise and motivation kept me going. I finally achieved the physique I always wanted."</div>
+                    <div class="testimonial-author">- Priya K., Queens</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Meet Julie Bien-Aime</h2>
+                    <p>As a NASM-certified personal trainer and competitive bodybuilder based in Brooklyn, I understand the journey from struggle to strength. My own transformation from feeling insecure about my body to competing on stage fuels my passion for helping other women discover their potential.</p>
+                    <p>I specialize in strength training, muscle building, and complete body transformations. Whether you're a beginner looking to build confidence or an athlete aiming for peak performance, I create personalized programs that deliver real results.</p>
+                    <p>My philosophy is simple: Turn Kilos into Confidence. Every rep, every set, and every milestone is designed to build not just physical strength, but unshakeable self-belief.</p>
+                    <div class="achievements">
+                        <div class="achievement">
+                            <div class="achievement-number">200+</div>
+                            <div class="achievement-text">Clients Transformed</div>
+                        </div>
+                        <div class="achievement">
+                            <div class="achievement-number">5+</div>
+                            <div class="achievement-text">Years Experience</div>
+                        </div>
+                        <div class="achievement">
+                            <div class="achievement-number">3</div>
+                            <div class="achievement-text">Competition Wins</div>
+                        </div>
+                        <div class="achievement">
+                            <div class="achievement-number">98%</div>
+                            <div class="achievement-text">Client Success Rate</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-images">
+                    <div class="about-image large">Stage Pose</div>
+                    <div class="about-image" style="background-image: url('https://images.squarespace-cdn.com/content/v1/682b9a52a5acd10bce301bf9/6e07dab6-890a-4e80-8302-5e6301f0ac6b/pullup.jpg?format=2500w'); background-size: cover; background-position: center; color: transparent;">Training Action Shot</div>
+                    <div class="about-image" style="background-image: url('https://images.squarespace-cdn.com/content/v1/682b9a52a5acd10bce301bf9/9940f9c1-ae98-40cd-bbef-5d357cbcbf9b/cover.jpg?format=2500w'); background-size: cover; background-position: center; color: transparent;">Training Action Shot</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <div class="faq-question">What's included in the free consultation?</div>
+                <div class="faq-answer">Your free 30-minute consultation includes a fitness assessment, goal setting session, and a customized plan overview. We'll also discuss which training option best fits your lifestyle and budget.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Do you provide meal plans?</div>
+                <div class="faq-answer">Yes! Both programs include nutrition guidance. Online coaching includes a comprehensive meal planning guide, while in-person clients receive personalized nutrition consultations.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What equipment do I need for online coaching?</div>
+                <div class="faq-answer">Programs are customized based on your available equipment - from full gym access to home workouts with minimal equipment. I'll adapt the plan to what you have.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What's your cancellation policy?</div>
+                <div class="faq-answer">In-person sessions require 24-hour notice for rescheduling. Online coaching operates on monthly billing with 30-day notice for cancellation. No long-term contracts required.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How do you track progress?</div>
+                <div class="faq-answer">We use a combination of measurements, progress photos, strength benchmarks, and regular check-ins. Online clients use a dedicated app for easy tracking and communication.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Start Your Transformation</h2>
+            <div class="contact-content">
+                <div class="contact-form">
+                    <h3>Book Your Free Consultation</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Interested In</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select an option</option>
+                                <option value="in-person">In-Person Training</option>
+                                <option value="online">Online Coaching</option>
+                                <option value="consultation">Just a Consultation</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="goals">Fitness Goals</label>
+                            <textarea id="goals" name="goals" placeholder="Tell me about your fitness goals and current experience level..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Book Free Consultation</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-item">📞 <strong>Phone:</strong> (555) 123-4567</div>
+                    <div class="contact-item">📧 <strong>Email:</strong> julie@kilojewelz.com</div>
+                    <div class="contact-item">📍 <strong>Location:</strong> Brooklyn, NY</div>
+                    <div class="contact-item">🕐 <strong>Response Time:</strong> Within 24 hours</div>
+                    <div class="contact-item">💬 <strong>Text Support:</strong> Available for all clients</div>
+                    
+                    <div style="margin-top: 2rem;">
+                        <h4 style="color: #ff69b4; margin-bottom: 1rem;">Follow My Journey</h4>
+                        <div class="contact-item">📱 Instagram: @kilojewelz</div>
+                        <div class="contact-item">💪 TikTok: @kilojewelzfitness</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const isOpen = answer.style.display === 'block';
+                
+                // Close all answers
+                document.querySelectorAll('.faq-answer').forEach(ans => {
+                    ans.style.display = 'none';
+                });
+                
+                // Open clicked answer if it wasn't already open
+                if (!isOpen) {
+                    answer.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
