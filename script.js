@@ -57,6 +57,32 @@ document.querySelectorAll('.faq-question').forEach(question => {
     });
 });
 
+// Mobile navigation toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (mobileToggle && navLinks) {
+        mobileToggle.addEventListener('click', function() {
+            navLinks.classList.toggle('mobile-active');
+        });
+        
+        // Close menu when clicking on a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                navLinks.classList.remove('mobile-active');
+            });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mobileToggle.contains(e.target) && !navLinks.contains(e.target)) {
+                navLinks.classList.remove('mobile-active');
+            }
+        });
+    }
+});
+
 // Form enhancement
 // const form = document.querySelector('.contact-form form');
 // form.addEventListener('submit', function(e) {

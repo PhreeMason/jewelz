@@ -94,6 +94,30 @@
             cursor: pointer;
         }
 
+        .nav-links.mobile-active {
+            display: flex !important;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: #30343F;
+            flex-direction: column;
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+        }
+
+        .nav-links.mobile-active li {
+            margin: 0.5rem 0;
+            text-align: center;
+        }
+
+        .nav-links.mobile-active a {
+            display: block;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+        }
+
         /* Hero Section - Warmer approach */
         .hero {
             background: linear-gradient(135deg, #30343F 0%, #1B2021 50%, #30343F 100%);
