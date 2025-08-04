@@ -115,7 +115,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('https://images.squarespace-cdn.com/content/v1/682b9a52a5acd10bce301bf9/d48b4cf5-3a86-4248-a43b-1300843fa80e/DSC05462.jpg?format=2500w') center/cover;
+            background: url('./images/kettle-point-bw.jpg') center/cover;
             opacity: 0.3;
         }
 
@@ -356,6 +356,7 @@
             font-size: 0.9rem;
             margin-bottom: 1rem;
             color: #d1006c;
+            width: fit-content;
         }
 
         .duration {
@@ -731,7 +732,31 @@
             }
 
             .btn {
-                width: 250px;
+                width: 100%;
+                max-width: 280px;
+                padding: 16px 20px;
+                font-size: 1rem;
+                line-height: 1.2;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+            
+            /* Allow text wrapping for longer button text on very small screens */
+            @media (max-width: 320px) {
+                .btn {
+                    white-space: normal;
+                    padding: 14px 18px;
+                    font-size: 0.95rem;
+                }
+            }
+            
+            /* Fix package savings text wrapping on mobile */
+            .package-savings {
+                width: 100% !important;
+                max-width: none !important;
+                text-align: center;
+                line-height: 1.3;
             }
         }
     </style>
@@ -800,7 +825,7 @@
                 <div class="service-card">
                     <h3>In-Person Training</h3>
                     <div class="price">$150/session</div>
-                    <div class="package-savings">Save with packages: 4 sessions $550 | 8 sessions $1000</div>
+                    <div class="package-savings">Save with packages: 4 sessions $550</div>
                     <div class="duration">60-minute sessions • Brooklyn, NY</div>
                     <ul>
                         <li>Personalized fitness assessment</li>
@@ -890,11 +915,7 @@
                     </div>
                 </div>
                 <div class="about-images">
-                    <div class="about-image large" style="background: linear-gradient(135deg, #ff69b4, #ff1493); display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 1.2rem; text-align: center; padding: 20px;">
-                        <div>
-                            <div style="font-size: 3rem; margin-bottom: 1rem;">👩‍💼</div>
-                            <div style="height: 30rem;">Your Photo Here<br><span style="font-size: 0.9rem; opacity: 0.8;">Smiling/Training Shot</span></div>
-                        </div>
+                    <div class="about-image large" style="background: url('./images/leg-raise.jpg') center/cover; height: 40rem; max-width: 25rem; margin: 0 auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);">
                     </div>
                 </div>
             </div>
@@ -907,7 +928,7 @@
             <h2 class="section-title">Common Questions (No Judgment!)</h2>
             <div class="faq-item">
                 <div class="faq-question">I'm a complete beginner - is this really for me?</div>
-                <div class="faq-answer">Absolutely! I specialize in working with complete beginners. I'm passionate about helping women who feel exactly like you do right now./div>
+                <div class="faq-answer">Absolutely! I specialize in working with complete beginners. I'm passionate about helping women who feel exactly like you do right now.</div>
             </div>
             <div class="faq-item">
                 <div class="faq-question">What happens in the free consultation?</div>
@@ -935,7 +956,7 @@
             <div class="contact-content">
                 <div class="contact-form">
                     <h3>Book Your Free Chat</h3>
-                    <form>
+                    <form target="_blank" action="https://formsubmit.co/8a94d1ff0b3507bc0acd2020a606ee08" method="POST">
                         <div class="form-group">
                             <label for="name">What should I call you?</label>
                             <input type="text" id="name" name="name" placeholder="First name is fine!" required>
@@ -983,72 +1004,6 @@
         <a href="#contact">Let's Chat - It's Free! 💬</a>
     </div>
 
-    <script>
-        // Dynamic month and spots counter
-        function updateUrgencyBanner() {
-            const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-            const currentDate = new Date();
-            const currentMonth = months[currentDate.getMonth()];
-            const daysInMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
-            const currentDay = currentDate.getDate();
-            const daysLeft = daysInMonth - currentDay;
-            
-            // Calculate spots left based on days remaining (starts with 4 spots, decreases as month progresses)
-            let spotsLeft = Math.max(1, Math.ceil(4 * (daysLeft / daysInMonth)));
-            
-            // Update the banner
-            const spotsElement = document.getElementById('spotsLeft');
-            const monthElement = document.getElementById('currentMonth');
-            
-            if (spotsElement && monthElement) {
-                spotsElement.textContent = `Only ${spotsLeft}`;
-                monthElement.textContent = currentMonth;
-            }
-        }
-
-        // Update on page load
-        updateUrgencyBanner();
-        
-        // Update every hour
-        setInterval(updateUrgencyBanner, 3600000);
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Improved FAQ toggle with better UX
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', function() {
-                const faqItem = this.parentElement;
-                const answer = this.nextElementSibling;
-                const isOpen = faqItem.classList.contains('active');
-                
-                // Close all answers
-                document.querySelectorAll('.faq-item').forEach(item => {
-                    item.classList.remove('active');
-                    item.querySelector('.faq-answer').style.display = 'none';
-                });
-                
-                // Open clicked answer if it wasn't already open
-                if (!isOpen) {
-                    faqItem.classList.add('active');
-                    answer.style.display = 'block';
-                }
-            });
-        });
-
-        // Form enhancement
-        const form = document.querySelector('.contact-form form');
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thanks for reaching out! Julie will contact you within 24 hours. Get ready to transform! 💪');
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
