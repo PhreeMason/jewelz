@@ -58,8 +58,8 @@ document.querySelectorAll('.faq-question').forEach(question => {
 });
 
 // Form enhancement
-const form = document.querySelector('.contact-form form');
-form.addEventListener('submit', function(e) {
-    e.preventDefault();
-    alert('Thanks for reaching out! Julie will contact you within 24 hours. Get ready to transform! 💪');
-});
+// const form = document.querySelector('.contact-form form');
+// form.addEventListener('submit', function(e) {
+//     e.preventDefault();
+//     alert('Thanks for reaching out! Julie will contact you within 24 hours. Get ready to transform! 💪');
+// });
