@@ -29,12 +29,12 @@
         header {
             background: #30343F;
             color: #ffffff;
-            padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(48, 52, 63, 0.3);
+            height: 70px;
         }
 
         nav {
@@ -44,11 +44,19 @@
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #EA638C;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .logo img {
+            height: 120px;
+            width: auto;
+            object-fit: cover;
+            max-width: 400px;
+            /* transform: translateY(-5px); */
+            filter: brightness(0) saturate(100%) invert(56%) sepia(31%) saturate(1743%) hue-rotate(310deg) brightness(95%) contrast(88%);
         }
 
         .nav-links {
@@ -398,6 +406,53 @@
             font-weight: bold;
             margin-right: 12px;
             font-size: 1.2rem;
+        }
+
+        /* Option 3: Mini pricing cards */
+        .pricing-grid {
+            display: flex;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .pricing-option {
+            background: rgba(234, 99, 140, 0.15);
+            border: 1px solid #EA638C;
+            border-radius: 8px;
+            padding: 0.5rem 0.8rem;
+            text-align: center;
+            flex: 1;
+            min-width: 80px;
+        }
+
+        .sessions {
+            font-size: 0.8rem;
+            color: #EA638C;
+            font-weight: bold;
+        }
+
+        .price-per {
+            font-size: 0.9rem;
+            color: #ffffff;
+            margin-top: 0.2rem;
+        }
+
+        /* Option 4: Horizontal pricing bar */
+        .package-pricing-bar {
+            background: rgba(234, 99, 140, 0.1);
+            padding: 0.8rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: #ffffff;
+            border: 1px solid rgba(234, 99, 140, 0.3);
+        }
+
+        .package-pricing-bar span {
+            color: #EA638C;
+            font-weight: bold;
         }
 
         /* Testimonials Section - More personal */
@@ -779,7 +834,9 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <div class="logo">KILOJEWELZ</div>
+            <div class="logo">
+                <img src="./images/logo-white.png" alt="KILOJEWELZ-LOGO">
+            </div>
             <button class="mobile-menu-toggle">☰</button>
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
@@ -798,8 +855,9 @@
                 <p class="welcome-message">Hey! I'm Julie 👋</p>
                 <h1>KILOJEWELZ</h1>
                 <div class="tagline">Turn Kilos into Confidence!</div>
-                <p>Julie Bien-Aime offers personalized fitness coaching in Brooklyn, NYC and online. Specializing in strength training for strong, confident women.</p>
-                <p class="mobile-description">Brooklyn's premier strength coach for women ready to transform.</p>
+                <p>Julie Bien-Aime offers personalized fitness coaching in Brooklyn, NYC and online. 
+                    Specializing in strength training, body transformation, and lifelong health
+                </p>
                 <div class="trust-indicator">
                     <span>✓ NASM Certified</span>
                     <span>✓ Accepting New Clients</span>
@@ -833,13 +891,48 @@
         <div class="container">
             <h2 class="section-title">Let's Find Your Perfect Fit</h2>
             <div class="urgency-banner" id="urgencyBanner">
-                📅 <span id="spotsLeft"></span> spots left for <span id="currentMonth"></span> • 🎉 New Year Special: First session 20% off
+                🎉 New Client Special: First session 20% off
             </div>
             <div class="services-grid">
+                 <div class="service-card">
+                    <h3>Online Coaching</h3>
+                    <div class="price">$200/month</div>
+                    <div class="pricing-grid">
+                        <div class="pricing-option">
+                            <div class="sessions">3-Month</div>
+                            <div class="price-per">$150/month</div>
+                        </div>
+                        <div class="pricing-option">
+                            <div class="sessions">In person Training</div>
+                            <div class="price-per">$100/session</div>
+                        </div>
+                    </div>
+                    <div class="duration">Weekly check-ins • Train anywhere</div>
+                    <ul>
+                        <li>Custom workout plans</li>
+                        <li>Progress tracking app</li>
+                        <li>Nutrition guidance included</li>
+                        <li>Weekly video check-ins</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary">Start Online Coaching</a>
+                </div>
                 <div class="service-card">
                     <h3>In-Person Training</h3>
-                    <div class="price">$150/session</div>
-                    <div class="package-savings">Save with packages: 4 sessions $550</div>
+                    <div class="price">$135/session</div>
+                    <div class="pricing-grid">
+                        <div class="pricing-option">
+                            <div class="sessions">5 Pack</div>
+                            <div class="price-per">$135/session</div>
+                        </div>
+                        <div class="pricing-option">
+                            <div class="sessions">10 Pack</div>
+                            <div class="price-per">$125/session</div>
+                        </div>
+                        <div class="pricing-option">
+                            <div class="sessions">20 Pack</div>
+                            <div class="price-per">$120/session</div>
+                        </div>
+                    </div>
                     <div class="duration">60-minute sessions • Brooklyn, NY</div>
                     <ul>
                         <li>Personalized fitness assessment</li>
@@ -849,26 +942,12 @@
                     </ul>
                     <a href="#contact" class="btn btn-primary">Book In-Person Session</a>
                 </div>
-
-                <div class="service-card">
-                    <h3>Online Coaching</h3>
-                    <div class="price">$300/month</div>
-                    <div class="package-savings">3-month commitment: $250/month</div>
-                    <div class="duration">Weekly check-ins • Train anywhere</div>
-                    <ul>
-                        <li>Custom workout plans</li>
-                        <li>Weekly video check-ins</li>
-                        <li>Progress tracking app</li>
-                        <li>Nutrition guidance included</li>
-                    </ul>
-                    <a href="#contact" class="btn btn-primary">Start Online Coaching</a>
-                </div>
             </div>
         </div>
     </section>
 
     <!-- Testimonials Section -->
-    <section id="success-stories" class="testimonials">
+    <!-- <section id="success-stories" class="testimonials">
         <div class="container">
             <h2 class="section-title">What My Clients Say</h2>
             <div class="testimonials-grid">
@@ -895,7 +974,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- About Section -->
     <section id="about" class="about">
@@ -906,10 +985,10 @@
                     <div class="credentials-highlight">
                         <strong>NASM-Certified Personal Trainer</strong> | Competitive Bodybuilder | Fresh Perspective
                     </div>
-                    <p>I get it - walking into a gym can be intimidating. I've been there. Just a few years ago, I was the girl hiding in the cardio section, too scared to touch a weight.</p>
-                    <p>Today? I'm a competitive bodybuilder who deadlifts twice my bodyweight. And I just launched my training business because I'm passionate about helping other women find their strength.</p>
-                    <p>As someone who transformed my own body and mindset, I bring fresh energy and genuine understanding to every session. I remember exactly what it feels like to be a beginner, which makes me the perfect guide for your journey.</p>
-                    <div class="achievements">
+                    <p>I get it - walking into a gym can be intimidating. I've been there. A few years ago, I was the girl hiding in the cardio section, too scared to touch a weight.</p>
+                    <p>Today? I'm a competitive bodybuilder who lifts twice my bodyweight. I launched my training business because I'm passionate about helping others find their strength and confidence.</p>
+                    <p>As someone who transformed my own body and mindset, I bring fresh energy and genuine understanding to every session. I know exactly  how to give all my clients  accountability, understanding, and an extra push in their fitness journey.</p>
+                    <!-- <div class="achievements">
                         <div class="achievement">
                             <div class="achievement-number">4</div>
                             <div class="achievement-text">Happy Clients</div>
@@ -926,7 +1005,7 @@
                             <div class="achievement-number">1-on-1</div>
                             <div class="achievement-text">Personal Attention</div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="about-images">
                     <div class="about-image large" style="background: url('./images/leg-raise.jpg') center/cover; height: 40rem; max-width: 25rem; margin: 0 auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);">
@@ -941,16 +1020,16 @@
         <div class="container">
             <h2 class="section-title">Common Questions (No Judgment!)</h2>
             <div class="faq-item">
+                <div class="faq-question">I'm not a beginner, do I still need training?</div>
+                <div class="faq-answer">Yes, I work with clients at all skill levels and provide a tailored program that meets you where you are.</div>
+            </div>
+            <div class="faq-item">
                 <div class="faq-question">I'm a complete beginner - is this really for me?</div>
                 <div class="faq-answer">Absolutely! I specialize in working with complete beginners. I'm passionate about helping women who feel exactly like you do right now.</div>
             </div>
             <div class="faq-item">
                 <div class="faq-question">What happens in the free consultation?</div>
                 <div class="faq-answer">It's just a friendly chat! We'll talk about your goals (no matter how big or small), I'll answer all your questions, and we'll figure out if we're a good fit. No pressure, no judgment. We can meet over Zoom or in person!</div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-question">I'm worried about bulking up - will lifting make me look masculine?</div>
-                <div class="faq-answer">This is my most common question! Short answer: no. Building significant muscle mass requires specific training, nutrition, and often years of dedicated work.</div>
             </div>
             <div class="faq-item">
                 <div class="faq-question">What if I need to cancel or reschedule?</div>
@@ -971,7 +1050,7 @@
                 <div class="contact-form">
                     <h3>Book Your Free Chat</h3>
                     <form action="https://api.web3forms.com/submit" method="POST">
-                        <input type="hidden" name="access_key" value="4c6e1ea9-79c3-42b4-b8e0-c417d0bf7519">
+                        <input type="hidden" name="access_key" value="2e0447b9-37cf-4882-911e-d34854861b37">
                         <div class="form-group">
                             <label for="name">What should I call you?</label>
                             <input type="text" id="name" name="name" placeholder="First name is fine!" required>
@@ -994,20 +1073,13 @@
                 </div>
                 <div class="contact-info">
                     <h3>Other Ways to Connect</h3>
-                    <div class="contact-item">📧 <strong>Email:</strong> julie@kilojewelz.com</div>
-                    <div class="contact-item">📍 <strong>Location:</strong> Brooklyn, NY</div>
-                    <div class="contact-item">🕐 <strong>Response Time:</strong> Within 24 hours</div>
-                    <div class="contact-item">💬 <strong>Support:</strong> Weekly check-ins included</div>
-                    
-                    <div style="margin-top: 2rem;">
-                        <h4 style="color: #ff69b4; margin-bottom: 1rem;">See My Journey</h4>
-                        <div class="contact-item">📱 Instagram: @kilojewelz</div>
-                        <div class="contact-item">💪 TikTok: @kilojewelz</div>
-                    </div>
+                    <div class="contact-item">📧 <strong>Email:</strong> kilojewelzfitness@gmail.com</div>
+                    <div class="contact-item">📱 Instagram: @kilojewelz</div>
+                    <div class="contact-item">💪 TikTok: @kilojewelz</div>
 
                     <div style="margin-top: 2rem; padding: 1.5rem; background: #30343F; border-radius: 15px;">
                         <p style="color: #ffffff; font-size: 1.1rem; margin-bottom: 1rem;"><strong>Limited Spots Available</strong></p>
-                        <p style="color: #cccccc;">As a new trainer, I'm keeping my client roster small to ensure everyone gets the attention they deserve. Book now to secure your spot!</p>
+                        <p style="color: #cccccc;">I'm keeping my client roster small to ensure everyone gets the attention they deserve. Book now to secure your spot!</p>
                     </div>
                 </div>
             </div>
