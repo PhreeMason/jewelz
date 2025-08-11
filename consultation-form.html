@@ -355,23 +355,14 @@
             cursor: pointer;
         }
 
-        .back-to-site {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            padding: 10px 20px;
-            background: rgba(255, 255, 255, 0.1);
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 25px;
+        .logo {
+            cursor: pointer;
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            z-index: 1001;
         }
 
-        .back-to-site:hover {
-            background: rgba(234, 99, 140, 0.3);
-            transform: translateY(-2px);
+        .logo:hover {
+            transform: scale(1.05);
+            color: #ffffff;
         }
 
         @media (max-width: 768px) {
@@ -419,14 +410,11 @@
 
         <!-- Header -->
         <div class="header">
-            <div class="logo">KILOJEWELZ</div>
+            <a href="index.html" class="logo">KILOJEWELZ</a>
             <div class="step-indicator">
                 <span id="currentStep">1</span> of <span id="totalSteps">9</span>
             </div>
         </div>
-
-        <!-- Back to Site Link -->
-        <a href="index.html" class="back-to-site">← Back to Site</a>
 
         <form id="consultationForm" action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="2e0447b9-37cf-4882-911e-d34854861b37">
