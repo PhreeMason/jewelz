@@ -667,54 +667,6 @@
             color: #ffffff;
         }
 
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-
-        .contact-form {
-            background: #1B2021;
-            padding: 2.5rem;
-            border-radius: 20px;
-            border: 2px solid #30343F;
-        }
-
-        .contact-form h3 {
-            color: #EA638C;
-            margin-bottom: 2rem;
-            font-size: 1.8rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.8rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.8rem;
-            font-weight: 600;
-            color: #ffffff;
-            font-size: 1.1rem;
-        }
-
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 15px;
-            border: 2px solid #30343F;
-            border-radius: 10px;
-            font-size: 1rem;
-            background: #30343F;
-            color: #ffffff;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #EA638C;
-        }
 
 
         /* Mobile Sticky CTA */
@@ -779,9 +731,6 @@
                 grid-template-columns: 1fr;
             }
 
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
 
             .achievements {
                 grid-template-columns: 1fr;
@@ -890,7 +839,7 @@
                     <span>✓ Free Consultation</span>
                 </div>
                 <div class="cta-buttons">
-                    <a href="#contact" class="btn btn-primary">Let's Chat - It's Free!</a>
+                    <a href="consultation-form.html" class="btn btn-primary">Let's Chat - It's Free!</a>
                     <a href="#services" class="btn btn-secondary">View Training Plans</a>
                 </div>
                 <p class="btn-note">No commitment required • Response within 24 hours</p>
@@ -923,7 +872,7 @@
                         <li>Nutrition guidance included</li>
                         <li>Weekly video check-ins</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary">Start Online Coaching</a>
+                    <a href="consultation-form.html" class="btn btn-primary">Start Online Coaching</a>
                 </div>
                 <div class="service-card">
                     <h3>In-Person Training</h3>
@@ -949,7 +898,7 @@
                         <li>Flexible Brooklyn locations</li>
                         <li>Weekly check-ins & accountability</li>
                     </ul>
-                    <a href="#contact" class="btn btn-primary">Book In-Person Session</a>
+                    <a href="consultation-form.html" class="btn btn-primary">Book In-Person Session</a>
                 </div>
             </div>
         </div>
@@ -1007,40 +956,34 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Ready to Start? Let's Do This!</h2>
-            <div class="contact-content">
-                <div class="contact-form">
-                    <h3>Book Your Free Consultation</h3>
-                    <form action="https://api.web3forms.com/submit" method="POST">
-                        <input type="hidden" name="access_key" value="2e0447b9-37cf-4882-911e-d34854861b37">
-                        <div class="form-group">
-                            <label for="name">What should I call you?</label>
-                            <input type="text" id="name" name="name" placeholder="First name is fine!" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="contact">Best way to reach you?</label>
-                            <input type="email" id="contact" name="contact" placeholder="Your email address" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="service">What are you interested in?</label>
-                            <select id="service" name="service" required>
-                                <option value="">Choose one...</option>
-                                <option value="in-person">In-Person Training (Brooklyn)</option>
-                                <option value="online">Online Coaching (Train anywhere)</option>
-                                <option value="not-sure">Not sure yet - let's talk!</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Let's Chat - It's Free!</button>
-                    </form>
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <p style="font-size: 1.3rem; margin-bottom: 2rem; color: #cccccc;">
+                    Ready to transform your fitness journey? Let's have a quick chat about your goals and find the perfect plan for you.
+                </p>
+                
+                <div class="cta-buttons" style="margin-bottom: 3rem;">
+                    <a href="consultation-form.html" class="btn btn-primary" style="font-size: 1.2rem; padding: 20px 40px;">
+                        Start Your Free Consultation
+                    </a>
                 </div>
-                <div class="contact-info">
-                    <h3>Other Ways to Connect</h3>
-                    <div class="contact-item">📧 <strong>Email:</strong> kilojewelzfitness@gmail.com</div>
-                    <div class="contact-item">📱 Instagram: @kilojewelz</div>
-                    <div class="contact-item">💪 TikTok: @kilojewelz</div>
 
-                    <div style="margin-top: 2rem; padding: 1.5rem; background: #30343F; border-radius: 15px;">
-                        <p style="color: #ffffff; font-size: 1.1rem; margin-bottom: 1rem;"><strong>Limited Spots Available</strong></p>
-                        <p style="color: #cccccc;">I'm keeping my client roster small to ensure everyone gets the attention they deserve. Book now to secure your spot!</p>
+                <div style="background: #1B2021; padding: 2rem; border-radius: 20px; border: 2px solid #30343F;">
+                    <h3 style="color: #EA638C; margin-bottom: 1.5rem; font-size: 1.5rem;">Other Ways to Connect</h3>
+                    <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
+                        <a href="mailto:kilojewelzfitness@gmail.com" style="color: #ffffff; text-decoration: none; transition: color 0.3s;">
+                            📧 <strong>Email:</strong> <span style="color: #EA638C; text-decoration: underline;">kilojewelzfitness@gmail.com</span>
+                        </a>
+                        <a href="https://instagram.com/kilojewelz" target="_blank" rel="noopener noreferrer" style="color: #ffffff; text-decoration: none; transition: color 0.3s;">
+                            📱 <strong>Instagram:</strong> <span style="color: #EA638C; text-decoration: underline;">@kilojewelz</span>
+                        </a>
+                        <a href="https://tiktok.com/@kilojewelz" target="_blank" rel="noopener noreferrer" style="color: #ffffff; text-decoration: none; transition: color 0.3s;">
+                            💪 <strong>TikTok:</strong> <span style="color: #EA638C; text-decoration: underline;">@kilojewelz</span>
+                        </a>
+                    </div>
+
+                    <div style="padding: 1.5rem; background: #30343F; border-radius: 15px;">
+                        <p style="color: #ffffff; font-size: 1.1rem; margin-bottom: 0.5rem;"><strong>Limited Spots Available</strong></p>
+                        <p style="color: #cccccc; margin: 0;">I'm keeping my client roster small to ensure everyone gets the attention they deserve. Book now to secure your spot!</p>
                     </div>
                 </div>
             </div>
@@ -1049,7 +992,7 @@
 
     <!-- Mobile Sticky CTA -->
     <div class="mobile-sticky-cta">
-        <a href="#contact">Let's Chat - It's Free! 💬</a>
+        <a href="consultation-form.html">Let's Chat - It's Free! 💬</a>
     </div>
 
     <script src="script.js"></script>
